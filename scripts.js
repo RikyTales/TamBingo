@@ -26,14 +26,21 @@ var options = [
   "*Mentions GonadBot*"
 ];
 
-for (var i = 1; i < 26; i++) {
-  var entrance = Math.floor(Math.random() * options.length);
-  var nameEntrance = options[entrance];
-  var index = options.indexOf(nameEntrance);
-  $(`.number${i}`).html(nameEntrance);
-  options.splice(index, 1);
+function generateBoard() {
+  for (var i = 1; i < 26; i++) {
+    var optionsClone = options.slice(0);
+    var entrance = Math.floor(Math.random() * optionsClone.length);
+    var nameEntrance = optionsClone[entrance];
+    var index = optionsClone.indexOf(nameEntrance);
+
+    $(`.number${i}`).html(nameEntrance);
+    optionsClone.splice(index, 1);
+  }
 }
 
+$(".new-board").on("click", generateBoard);
 $(".cell").click(function () {
   $(this).toggleClass("active");
 });
+
+generateBoard();

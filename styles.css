@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 body {
   background: #E2EFF1;
@@ -8,7 +9,7 @@ body {
 }
 .logo {
   width: 800px;
-  margin: 10px auto;
+  margin: 0 auto;
   text-align: center;
   text-transform: uppercase;
   font-size: 46px;
@@ -27,30 +28,33 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 150px;
+  height: 140px;
   margin-bottom: 10px;
 }
 .row:last-child {
   margin-bottom: 0;
 }
-
-.cell {
+.cell, .new-board {
   display: flex;
-  box-sizing: border-box;
-  align-items: center;
   justify-content: center;
-  -webkit-user-select: none;
-  cursor: pointer;
+  align-items: center;
+  text-align: center;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
-  text-align: center;
-  background: #B6D5E1;
-  width: 150px;
+  padding: 14px;
+  border-radius: 10px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+.cell {
+  width: 140px;
   height: 100%;
   margin: 0 10px 0 0;
-  padding: 14px;
+  background: #B6D5E1;
   border: 3px solid #65799B;
-  border-radius: 10px;
 }
 .cell:nth-child(5n) {
   margin-right: 0;
@@ -58,4 +62,11 @@ body {
 .active {
   padding: 10px;
   border: 7px solid #444a84;
+}
+.new-board {
+  width: 220px;
+  height: 50px;
+  margin: 15px auto 0;
+  background-color: #444a84;
+  color: #B6D5E1;
 }
